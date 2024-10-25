@@ -1,0 +1,27 @@
+<!-- src/app/components/sms-page/sms-page.component.html -->
+<div class="app-container">
+    <h1>Message Templates</h1>
+    <div class="button-container">
+      <button class="custom-button sms-button" (click)="toggleSmsMessages()">
+        SMS ({{ smsMessages.length }})
+      </button>
+      <button class="custom-button whatsapp-button" (click)="toggleWhatsappMessages()">
+        WhatsApp ({{ whatsappMessages.length }})
+      </button>
+    </div>
+  
+    <div *ngIf="showSmsMessages" class="message-list">
+      <h2>SMS Messages</h2>
+      <ul>
+        <li *ngFor="let message of smsMessages; let i = index">{{ message }}</li>
+      </ul>
+    </div>
+  
+    <div *ngIf="showWhatsappMessages" class="message-list">
+      <h2>WhatsApp Messages</h2>
+      <ul>
+        <li *ngFor="let message of whatsappMessages; let i = index">{{ message }}</li>
+      </ul>
+    </div>
+  </div>
+  
